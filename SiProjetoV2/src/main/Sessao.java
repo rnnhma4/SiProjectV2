@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Sessao {
 
-	String donoDaSessao, id;
+	private String donoDaSessao, id;
 	public Sessao(String login){
 		this.donoDaSessao = login;
 		this.id = UUID.randomUUID().toString().replace("-", "");

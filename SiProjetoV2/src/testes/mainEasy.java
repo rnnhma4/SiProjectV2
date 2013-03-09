@@ -14,6 +14,7 @@ public class mainEasy {
 		files.add("testes/US01.txt");
 		files.add("testes/US02.txt");
 		files.add("testes/US03.txt");
+		files.add("testes/US04.txt");
 		FacadeEasy facade = new FacadeEasy();
 		EasyAcceptFacade eaFacade = new EasyAcceptFacade(facade, files);
 		eaFacade.executeTests();
