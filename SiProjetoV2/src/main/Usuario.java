@@ -97,19 +97,31 @@ public class Usuario {
 	public List getFonteDeSons() {
 		return fontesDeSons;
 	}
-
+/**
+ * Retorna lista de Sons favoritos
+ * @return
+ */
 	public List getSonsFavoritos() {
 		return sonsFavoritos;
 	}
-	
+	/**
+	 * Add som nos favoritos
+	 * @param idSom
+	 */
 	public void addSomFavorito(String idSom) {
 		sonsFavoritos.add(0,idSom);
 	}
-
+/**
+ * Retorna lista Feeds
+ * @return
+ */
 	public List getFeedExtra() {
 	   return feedExtra;
 	}
-	
+	/**
+	 * Add feed na lista
+	 * @param idSom
+	 */
 	public void addFeedExtra(String idSom){
 		feedExtra.add(0, idSom);
 	}

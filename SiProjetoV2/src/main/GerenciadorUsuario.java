@@ -207,7 +207,11 @@ public class GerenciadorUsuario {
 		usuario2.addSeguidor(usuario1.getId());
 		
 	}
-
+/**
+ * Retorna fonte de sons
+ * @param login
+ * @return
+ */
 	public List getFontesDeSons(String login) {
 		return usuariosList.get(login).getFonteDeSons();
 	}
@@ -239,15 +243,27 @@ public class GerenciadorUsuario {
 	      }
 	      return visaoDosSons;
 	}
-
+/**
+ * Retorna sons favoritos
+ * @param login
+ * @return
+ */
 	public List getSonsFavoritos(String login) {
 		return usuariosList.get(login).getSonsFavoritos();
 	}
-
+/**
+ * Retorna Feeds
+ * @param login
+ * @return
+ */
 	public List getFeedExtra(String login) {
 		return  usuariosList.get(login).getFeedExtra();
 	}
-
+/**
+ * Favorita um som e add feeds;
+ * @param login
+ * @param idSom
+ */
 	public void favoritarSom(String login, String idSom) {
 		/*
 		 * add na lista de favoritos do usuario login

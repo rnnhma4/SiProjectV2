@@ -55,12 +55,24 @@ public class GerenciadorSons {
 		throw new AtributoInexistenteException();
 	}
 
-	protected void verificaId(String idSom) throws PostException {
+	/**
+	 * Verifica se idSom é valida
+	 * @param idSom
+	 * @return
+	 * @throws PostException
+	 */
+	protected boolean verificaId(String idSom) throws PostException {
 		if (idSom == null || idSom.trim().isEmpty()) {
 			throw new PostSomInvalidException();
 		}
+		return true;
 	}
 	
+	/**
+	 * Verifica se atributo é valido
+	 * @param atributo
+	 * @throws AtributoInvalidoException
+	 */
 	private void verificaAtributo(String atributo)
 			throws AtributoInvalidoException {
 		if (atributo == null || atributo.trim().isEmpty()) {
