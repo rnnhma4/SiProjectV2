@@ -1,17 +1,20 @@
 package main;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.UUID;
 
 public class Som {
 	private String donoDoSom, link, id, dataCriacao;
+
 	public Som(String login, String link, String dataCriacao) {
 		this.donoDoSom = login;
 		this.link = link;
 		this.dataCriacao = dataCriacao;
 		this.id =  UUID.randomUUID().toString().replace("-", "");
+
 		
 	}
-
 	public String getId() {
 		return id;
 	}

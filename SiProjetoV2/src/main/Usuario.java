@@ -9,7 +9,10 @@ public class Usuario {
 	private String login, senha, nome, email, id;
 	private List<String> perfilMusical;
 	private List<String> seguidores;
-	private List<String> FontesDeSons;
+	private List<String> fontesDeSons;
+	//IdSom
+	private List<String> sonsFavoritos;
+	private List<String> feedExtra;
 
 	public Usuario(String login, String senha, String nome, String email) {
 		this.login = login;
@@ -19,7 +22,9 @@ public class Usuario {
 		this.id = UUID.randomUUID().toString().replace("-", "");
 		this.perfilMusical = new LinkedList<String>();
 		this.seguidores = new LinkedList<String>();
-		this.FontesDeSons = new LinkedList<String>();
+		this.fontesDeSons = new LinkedList<String>();
+		this.sonsFavoritos = new LinkedList<String>();
+		this.feedExtra = new LinkedList<String>();
 	}
 
 	public String getLogin() {
@@ -69,7 +74,7 @@ public class Usuario {
 	 * @param idUser
 	 */
 	public void addSeguindo(String idUser) {
-		FontesDeSons.add(idUser);		
+		fontesDeSons.add(idUser);		
 	}
 	/**
 	 * add IdUser na lista de seguidor;
@@ -90,7 +95,23 @@ public class Usuario {
 	 * @return
 	 */
 	public List getFonteDeSons() {
-		return FontesDeSons;
+		return fontesDeSons;
+	}
+
+	public List getSonsFavoritos() {
+		return sonsFavoritos;
+	}
+	
+	public void addSomFavorito(String idSom) {
+		sonsFavoritos.add(0,idSom);
+	}
+
+	public List getFeedExtra() {
+	   return feedExtra;
+	}
+	
+	public void addFeedExtra(String idSom){
+		feedExtra.add(0, idSom);
 	}
 	
 }

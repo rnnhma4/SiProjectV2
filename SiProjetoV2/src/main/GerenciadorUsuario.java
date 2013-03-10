@@ -239,4 +239,28 @@ public class GerenciadorUsuario {
 	      }
 	      return visaoDosSons;
 	}
+
+	public List getSonsFavoritos(String login) {
+		return usuariosList.get(login).getSonsFavoritos();
+	}
+
+	public List getFeedExtra(String login) {
+		return  usuariosList.get(login).getFeedExtra();
+	}
+
+	public void favoritarSom(String login, String idSom) {
+		/*
+		 * add na lista de favoritos do usuario login
+		 * e add no feed todos que é seguidor do user login;
+		 */
+			Usuario usuario = usuariosList.get(login);
+			usuario.addSomFavorito(idSom);
+			Iterator<String> itr = usuario.getSeguidores().iterator();
+			while (itr.hasNext()){
+				String loginUser = usuariosListIdUser.get(itr.next());
+				usuariosList.get(loginUser).addFeedExtra(idSom);
+			}
+	}
+
+
 }

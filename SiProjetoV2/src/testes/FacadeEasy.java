@@ -84,4 +84,15 @@ public class FacadeEasy {
 		return sistema.getVisaoDosSons(idSessao).toString().replace("[", "{").replace("]", "}").replace(" ", "");
 	}
 	
+	public String getSonsFavoritos(String idSessao) throws SessaoInexistenteException, SessaoInvalidaException{
+		return sistema.getSonsFavoritos(idSessao).toString().replace("[", "{").replace("]", "}").replace(" ", "");
+	}
+	
+	public String getFeedExtra(String idSessao) throws SessaoInexistenteException, SessaoInvalidaException {
+		return sistema.getFeedExtra(idSessao).toString().replace("[", "{").replace("]", "}").replace(" ", "");
+	}
+	
+	public void favoritarSom(String idSessao, String idSom) throws SessaoInexistenteException, SessaoInvalidaException, PostException{
+		sistema.favoritarSom(idSessao, idSom);
+	}
 }

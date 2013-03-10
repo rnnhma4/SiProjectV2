@@ -196,10 +196,54 @@ public class Sistema {
 		return gerenciaUsuario.getListaDeSeguidores(login);
 	}
 
-	public List getVisaoDosSons(String idSessao) throws SessaoInexistenteException, SessaoInvalidaException {
-		//Vou pensar em um modo melhor		
+	/**
+	 * Retorna a visao de sons do Usuario
+	 * @param idSessao
+	 * @return
+	 * @throws SessaoInexistenteException
+	 * @throws SessaoInvalidaException
+	 */
+	public List getVisaoDosSons(String idSessao) throws SessaoInexistenteException, SessaoInvalidaException {	
 		String login = gerenciaSessao.getLoginUser(idSessao);
 		return gerenciaUsuario.getVisaoDosSons(login);
+	}
+
+	/**
+	 * Retorna lista de favoritos do som de um usuario
+	 * @param idSessao
+	 * @return
+	 * @throws SessaoInexistenteException
+	 * @throws SessaoInvalidaException
+	 */
+	public List getSonsFavoritos(String idSessao) throws SessaoInexistenteException, SessaoInvalidaException {
+		String login = gerenciaSessao.getLoginUser(idSessao);
+		return gerenciaUsuario.getSonsFavoritos(login);
+	}
+
+	/**
+	 * Retorna o feedExtra de um user
+	 * @param idSessao
+	 * @return
+	 * @throws SessaoInexistenteException
+	 * @throws SessaoInvalidaException
+	 */
+	public List getFeedExtra(String idSessao) throws SessaoInexistenteException, SessaoInvalidaException {
+		return gerenciaUsuario.getFeedExtra(gerenciaSessao.getLoginUser(idSessao));
+	}
+
+	/**
+	 * Favorita um som
+	 * @param idSessao
+	 * @param idSom
+	 * @throws SessaoInexistenteException
+	 * @throws SessaoInvalidaException
+	 * @throws PostException 
+	 */
+	public void favoritarSom(String idSessao, String idSom) throws SessaoInexistenteException, SessaoInvalidaException, PostException {
+		String login = gerenciaSessao.getLoginUser(idSessao);
+		gerenciaSons.verificaId(idSom);
+		gerenciaUsuario.favoritarSom(login, idSom);
+		
 	}
 
 }

@@ -4,12 +4,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import exception.AtributoInexistenteException;
 import exception.AtributoInvalidoException;
 import exception.PostDateException;
 import exception.PostException;
+import exception.PostSomInexistenteException;
 import exception.PostSomInvalidException;
 
 public class GerenciadorSons {
@@ -53,7 +55,7 @@ public class GerenciadorSons {
 		throw new AtributoInexistenteException();
 	}
 
-	private void verificaId(String idSom) throws PostException {
+	protected void verificaId(String idSom) throws PostException {
 		if (idSom == null || idSom.trim().isEmpty()) {
 			throw new PostSomInvalidException();
 		}
@@ -98,5 +100,6 @@ public class GerenciadorSons {
 			throw new PostDateException();
 		}
 	}
+
 
 }
