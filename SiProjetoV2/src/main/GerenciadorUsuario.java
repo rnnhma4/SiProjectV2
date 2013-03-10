@@ -213,7 +213,7 @@ public class GerenciadorUsuario {
 	}
 
 	/**
-	 * 
+	 * Retorna a lista de seguidores do Usuario
 	 * @param login
 	 * @return
 	 */
@@ -221,15 +221,21 @@ public class GerenciadorUsuario {
 		return usuariosList.get(login).getSeguidores();
 	}
 
+	/**
+	 * Retorna uma lista das visoes de sons do Usuario
+	 * @param login
+	 * @return
+	 */
 	public List getVisaoDosSons(String login) {
-		Usuario usuario = usuariosList.get(login);
-		List visaoDosSons = new LinkedList();
-		List fonteDeSons = usuario.getFonteDeSons();
+		List<Som> visaoDosSons = new LinkedList();
+		List<String> fonteDeSons = getFontesDeSons(login);
 		//Tenho a lista de Users Minha fonte;
 		//pego esse idUser acho login
-		Iterator itr = fonteDeSons.iterator();
+		Iterator<String> itr = fonteDeSons.iterator();
+		//visaoDosSons.addAll(getPerfilMusical(login));
 	      while(itr.hasNext()) {
-	    	  visaoDosSons.addAll(usuariosList.get(usuariosListIdUser.get(itr.next())).getFonteDeSons());
+	    	  String login2 = usuariosListIdUser.get(itr.next());
+	    	  visaoDosSons.addAll(0,getPerfilMusical(login2));
 	      }
 	      return visaoDosSons;
 	}
